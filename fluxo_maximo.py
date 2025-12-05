@@ -67,7 +67,6 @@ def parse_instance(path='./fluxo_maximo.txt'):
     return n, m, s, t, edge_list
 
 
-#  FUNÇÃO DE FLUXO MÁXIMO
 def solve_max_flow(n, s, t, edge_list):
     """
     Resolve um problema de fluxo máximo utilizando o SimpleMaxFlow.
@@ -113,7 +112,6 @@ def solve_max_flow(n, s, t, edge_list):
     return maxflow, flows
 
 
-#  FORMATAÇÃO DA SAÍDA
 def print_didactic_output(n, m, s, t, maxflow, flows):
     """
     Exibe na tela um resumo didático dos resultados do cálculo de fluxo máximo.
@@ -237,12 +235,14 @@ def args_option(args=list, option=str):
             return True
     return False
 
-#  MAIN
+
 def main():
     if len(sys.argv) < 2 or args_option(sys.argv, '--help'):
         print("Uso: python3 fluxo_maximo.py [OPTIONS] [file]")
         print("    --help : mensagem de ajuda")
         print("    --plot : exibe uma imagem do grafo final")
+        print("    --sort : ordena o grafo gerado")
+        
         return
     
     path = sys.argv[-1]
@@ -252,7 +252,8 @@ def main():
 
     maxflow, flows = solve_max_flow(n, s, t, edges)
     
-    # flows.sort()
+    if args_option(sys.argv, '--sort'):
+        flows.sort()
 
     print_didactic_output(n, m, s, t, maxflow, flows)
 
