@@ -99,7 +99,7 @@ Mostra uma saída limpa e explicativa no terminal.
 Gera um grafo visual destacando arestas com fluxo > 0.
 
 ## 👨‍💻 Desenvolvedores
-- **Iago Cordeiro Canguçu**  — Desenvolvedor principal
+- **Iago Cordeiro Canguçu** — Desenvolvedor principal
   GitHub: [@iaguian0](https://github.com/iaguian0)
 
 - **Luiz Gustavo Soares**  
